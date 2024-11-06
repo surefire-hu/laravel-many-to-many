@@ -3,9 +3,10 @@
 use Illuminate\Support\Facades\Route;
 
 // Controllers
+
+use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\Admin\MainController as AdminMainController;
-use App\Http\Controllers\Admin\ProjectController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +30,7 @@ Route::prefix('admin')
             return view('admin.dashboard'); 
         })->name('dashboard');
 
+    Route::resource('projects', ProjectController::class);
     Route::resource('projects', ProjectController::class);
 
 });
